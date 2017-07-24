@@ -19,9 +19,18 @@ class SearchBar extends Component {
     console.log('input change: ', event.target.value);
   }
 
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    console.log('form submitted');
+  }
+
   render() {
     return (
-      <form className="container">
+      <form
+        className="container"
+        onSubmit={this.handleFormSubmit}
+      >
         <div className="form-group row mt-5 justify-content-center">
           <div className="col-10">
             <div className="input-group">
@@ -33,7 +42,7 @@ class SearchBar extends Component {
                 onChange={this.handleInputChange}
               />
               <span className="input-group-btn">
-                <button className="btn btn-secondary" type="button">
+                <button className="btn btn-secondary" type="submit">
                   Search
                 </button>
               </span>
