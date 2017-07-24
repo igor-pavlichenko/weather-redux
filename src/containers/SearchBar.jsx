@@ -23,6 +23,7 @@ class SearchBar extends Component {
     event.preventDefault();
 
     console.log('form submitted');
+    // fetch weather data
   }
 
   render() {
