@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import SearchBar from '../containers/SearchBar';
+import WeatherList from '../containers/WeatherList';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         </div>
         <div>
           <SearchBar />
+          <WeatherList />
         </div>
       </div>
     );
