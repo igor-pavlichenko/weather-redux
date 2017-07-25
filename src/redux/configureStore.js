@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import ReduxPromise from 'redux-promise';
 import { rootReducer, initialState } from './reducers';
 import loggingMiddleware from './middleware/loggingMiddleware.js';
 
@@ -10,6 +11,7 @@ export const configureStore = () => {
     initialState,
     composeEnhancers(
       applyMiddleware(
+        ReduxPromise,
         loggingMiddleware,
       ),
     ),

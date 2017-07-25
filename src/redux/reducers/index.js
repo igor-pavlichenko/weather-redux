@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux';
-// import * as Books from './reducer_books';
+import * as Weather from './reducer_weather';
 // import * as ActiveBook from './reducer_active_book';
 
 
 export const rootReducer = combineReducers({
-  // books: Books.reducer,
-  // activeBook: ActiveBook.reducer,
+  weather: Weather.reducer,
 });
 
 export const initialState = {

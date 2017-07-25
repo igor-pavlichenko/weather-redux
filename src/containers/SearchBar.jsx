@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { selectBook } from '../redux/actions/index';
+import { fetchWeather } from '../redux/actions/index';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -16,7 +16,6 @@ class SearchBar extends Component {
     this.setState({
       term: event.target.value,
     })
-    console.log('input change: ', event.target.value);
   }
 
   handleFormSubmit = (event) => {
@@ -24,6 +23,9 @@ class SearchBar extends Component {
 
     console.log('form submitted');
     // fetch weather data
+    this.props.fetchWeather(this.state.term)
+    // clear input
+    this.setState({ term: '' });
   }
 
   render() {
@@ -63,9 +65,8 @@ class SearchBar extends Component {
  * @returns
  */
 function mapStateToProps(state) {
-  console.log('state: ', state);
   return {
-    books: state.books.books,
+    city: state.city.city,
   };
 }
 
@@ -77,12 +78,12 @@ function mapStateToProps(state) {
  * @returns
  */
 function mapDispatchToProps(dispatch) {
-  // whenever 'selectBook' is called, the result should be passed
+  // whenever 'fetchWeather' is called, the result should be passed
   // to all our reducers
-  return bindActionCreators({ selectBook: selectBook }, dispatch);
+  return bindActionCreators({ fetchWeather: fetchWeather }, dispatch);
 }
 
 export default connect(
-  // mapStateToProps,
-  // mapDispatchToProps,
+  null, // mapStateToProps,
+  mapDispatchToProps,
 )(SearchBar);
