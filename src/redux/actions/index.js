@@ -6,7 +6,7 @@ const BASE_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KE
 
 
 export function fetchWeather(city) {
-  const url = `${BASE_URL}&q=${city},pt`;
+  const url = `${BASE_URL}&q=${city},pt&units=metric`;
   const request = axios.get(url);
 
   return {
