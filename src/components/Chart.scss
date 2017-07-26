@@ -1,6 +1,11 @@
 .table {
 	svg {
-		height: 15vh;
-		width: auto;
+		height: auto;
+		width: 12vw;
+	}
+
+	td, th {
+		vertical-align: middle;
+		text-align: center;
 	}
 }

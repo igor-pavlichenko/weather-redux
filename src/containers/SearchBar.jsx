@@ -34,7 +34,7 @@ class SearchBar extends Component {
         className="container"
         onSubmit={this.handleFormSubmit}
       >
-        <div className="form-group row mt-5 justify-content-center">
+        <div className="form-group row mt-5 mb-5 justify-content-center">
           <div className="col-10">
             <div className="input-group">
               <input
