@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // import { bindActionCreators } from 'redux';
 import Chart from '../components/Chart';
+import Map from '../components/Map';
 
 
 class WeatherList extends Component {
@@ -15,7 +16,10 @@ class WeatherList extends Component {
 
     return (
       <tr key={name}>
-        <td>{name}</td>
+        <td>
+          {name}
+          <Map />
+        </td>
         <td><Chart data={temps} color="red" units="Cº" /></td>
         <td><Chart data={pressures} color="gray" units="hPa" /></td>
         <td><Chart data={humidities} color="blue" units="%" /></td>
